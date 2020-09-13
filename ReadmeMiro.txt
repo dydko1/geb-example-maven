@@ -9,8 +9,11 @@ mvn clean test -Dtest=secondtestngTest
 mvn clean test -Dtest=flightsStrapTestngTest,loginTest
 
 taskkill /F /IM chromedriver-windows-32bit.exe /T
-
-git clone https://github.com/grails-samples/geb-example-grails
+--------------
+git clone https://github.com/grails-samples/geb-example-grails //nie moje
+git clone https://github.com/dydko1/geb-example-grails.git
+git clone https://github.com/dydko1/geb-example-maven.git
+--------------
 cd geb-example-grails
 grailsw run-app
 
