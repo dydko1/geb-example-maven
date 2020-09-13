@@ -1,12 +1,12 @@
 package pages
-
-import geb.Module
+import modules.PersonRow
 
 class ListPage extends ScaffoldPage {
-	static url = "person/list"
+	//static url = "person/list"
+	static url = "http://localhost:8080/geb-example-grails/person/list/"
 	
 	static at = {
-		title ==~ /Person List/
+		title ==~ "Person List"
 	}
 	
 	static content = {
@@ -17,14 +17,3 @@ class ListPage extends ScaffoldPage {
 	}
 }
 
-class PersonRow extends Module {
-	static content = {
-		cell { $("td", it) }
-		cellText { cell(it).text() }
-		cellHrefText{ cell(it).find('a').text() }
-		visible { Boolean.valueOf(cellHrefText(0)) }
-		firstName { cellText(1) }
-		lastName { cellText(2) }
-		showLink(to: ShowPage) { cell(0).find("a") }
-	}
-}

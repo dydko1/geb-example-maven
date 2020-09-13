@@ -1,7 +1,9 @@
-import geb.spock.GebReportingSpec
-import modules.ContactFormModule
+package specs
 
-class ContactFormSpec extends GebReportingSpec {
+import geb.spock.GebSpec
+import pages.ContactPage
+
+class ContactFormSpec extends GebSpec {
 
     def "Navigate to contact form and fill in valid form"() {
 

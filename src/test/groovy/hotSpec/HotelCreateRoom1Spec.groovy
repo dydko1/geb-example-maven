@@ -1,25 +1,25 @@
 package hotSpec
 
 import geb.spock.GebReportingSpec
-import hotPage.CreateRoomPage
+import hotPage.CreateRoomPage1
 import spock.lang.Stepwise
 
 @Stepwise
-class HotelCreateRoomSpec extends GebReportingSpec {
+class HotelCreateRoom1Spec extends GebReportingSpec {
 
     def "Go to Create Room"() {
         given: "Go to create Page"
-        def page = to CreateRoomPage
+        def page = to CreateRoomPage1
 
         when:
-        page.name = 'Room 120'
+        page.name = 'room2'
         page.save()
-        page.nav.extras()
-        sleep(1000)
-        page.nav.home()
-        sleep(1000)
-        page.nav.rooms()
 
+        page.nav1.extras()
+        sleep(1000)
+        page.nav1.home()
+        sleep(1000)
+        page.nav1.rooms()
         println("aaaa")
 
         then:

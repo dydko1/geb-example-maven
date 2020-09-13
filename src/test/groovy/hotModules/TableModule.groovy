@@ -1,4 +1,4 @@
-package demo.browserautomation.modules
+package hotModules
 
 import geb.Module
 

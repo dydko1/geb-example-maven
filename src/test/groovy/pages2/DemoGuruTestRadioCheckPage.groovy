@@ -4,24 +4,21 @@ import geb.Page
 
 //import geb.module.Select
 
-class DemoGuruTestRegisterPage extends Page {
+class DemoGuruTestRadioCheckPage extends Page {
 
-    static at = { title == "Login Page" }
-    static url= "test/login.html"
+    static at = { title == "Radio Button & Check Box Demo" }
+    static url = "test/radio.html"
     //static at = { heading.isDisplayed() }
     static content = {
 
+        radio1 { $("#vfb-7-1") }
+        radio2 { $("#vfb-7-2") }
+        radio3 { $("#vfb-7-3") }
 
-        email(wait: true) { $("#email", type: "text") }
-        password(wait: true) { $(name: "passwd") }
-        btn{$("#SubmitLogin")}
-        /*
-        phone(wait: true) { $(name: "phone") }
-        email(wait: true) { $(name: "userName") }
-        country(wait: true) { $('select', name: 'country') }//.module(Select) }
-        btn { $(name: "submit") }
-        link1 {$(text: "sign-in")}
-         */
+        checkBox1 { $("#vfb-6-0") }
+        checkBox2 { $("#vfb-6-1") }
+        checkBox3 { $("#vfb-6-2") }
+
     }
 }
 //$("form").servClass = "First"

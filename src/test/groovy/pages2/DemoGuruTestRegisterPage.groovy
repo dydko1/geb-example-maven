@@ -4,16 +4,18 @@ import geb.Page
 
 //import geb.module.Select
 
-class DemoGuruRegisterPage extends Page {
+class DemoGuruTestRegisterPage extends Page {
 
     static at = { title == "Login Page" }
-    static url= "test/login.html"
+    static url = "test/login.html"
     //static at = { heading.isDisplayed() }
     static content = {
 
+        email(wait: true) { $("#email", type: "text") }
+        password(wait: true) { $(name: "passwd") }
+        btn { $("#SubmitLogin") }
+
         /*
-        firstName(wait: true) { $(name: "firstName") }
-        lastName(wait: true) { $(name: "lastName") }
         phone(wait: true) { $(name: "phone") }
         email(wait: true) { $(name: "userName") }
         country(wait: true) { $('select', name: 'country') }//.module(Select) }

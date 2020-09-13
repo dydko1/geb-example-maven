@@ -2,7 +2,7 @@ package pages
 
 import geb.Page
 
-class WeightPage extends Page {
+class WeightPage1 extends Page {
     static at = { title == "Decohere - Planet Weight Calculator" }
     static url = "https://decohere.herokuapp.com/planets"
 

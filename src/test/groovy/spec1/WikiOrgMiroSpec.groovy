@@ -1,16 +1,21 @@
 package spec1
 
+import geb.spock.GebReportingSpec
 import spock.lang.Stepwise
 import pages1.*
 
 @Stepwise
-class WikiOrgMiro {
+class WikiOrgMiroSpec extends GebReportingSpec {
 
     def "Go to Main Page"()
     {
-        when:
+        given: "Go to wiki"
             to MainPageMiro
+        when:
+            //MainPageMiro.artykul.click() // do zmian
+            MainPageMiro.showPiwo()
+            println("aaa")
         then:
-            println("fffff")
+            print("bbb")
     }
 }

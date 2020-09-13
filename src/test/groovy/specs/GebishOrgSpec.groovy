@@ -1,3 +1,5 @@
+package specs
+
 import pages.GebishOrgHomePage
 import pages.TheBookOfGebPage
 import geb.spock.GebSpec

@@ -1,19 +1,20 @@
 package spec2
 
 import geb.spock.GebReportingSpec
-import pages2.*
+import pages2.HotelPage
 import spock.lang.Stepwise
 
 @Stepwise
-class DemoGuruMiroTestsFacebookSpec extends GebReportingSpec {
+class HotelSpec extends GebReportingSpec {
 
     def "Go to Main Page"() {
         given: "Go to Facebook Page"
-        def page1 = to DemoGuruTestFacebookPage
+        def page1 = to HotelPage
 
         when:
-        page1.picture.click()
+        println(page1.divs.text())
         println("aaaa")
+
         then:
         println("bbbb")
         sleep(5000)

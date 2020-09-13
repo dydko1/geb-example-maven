@@ -1,3 +1,6 @@
+package pages
+import modules.ManualsMenuModule
+
 import geb.Page
 
 class GebishOrgHomePage extends Page {

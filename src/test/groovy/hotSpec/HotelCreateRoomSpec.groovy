@@ -1,18 +1,26 @@
-package spec2
+package hotSpec
 
 import geb.spock.GebReportingSpec
-import pages2.HotelPage
+import geb.spock.GebSpec
+import hotPage.CreateRoomPage
 import spock.lang.Stepwise
 
 @Stepwise
-class HotelSpec extends GebReportingSpec {
+class HotelCreateRoomSpec extends GebSpec {
 
-    def "Go to Main Page"() {
-        given: "Go to Facebook Page"
-        def page1 = to HotelPage
+    def "Go to Create Room"() {
+        given: "Go to create Page"
+        def page = to CreateRoomPage
 
         when:
-        println(page1.divs.text())
+        page.name = 'Room 1201'
+        page.save()
+        page.nav.extras()
+        sleep(1000)
+        page.nav.home()
+        sleep(1000)
+        page.nav.rooms()
+
         println("aaaa")
 
         then:

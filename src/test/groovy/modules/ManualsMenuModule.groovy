@@ -1,3 +1,5 @@
+package modules
+
 import geb.Module
 
 class ManualsMenuModule extends Module {

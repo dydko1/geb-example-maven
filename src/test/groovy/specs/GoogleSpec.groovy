@@ -1,3 +1,5 @@
+package specs
+
 import geb.spock.GebReportingSpec
 import spock.lang.Stepwise
 

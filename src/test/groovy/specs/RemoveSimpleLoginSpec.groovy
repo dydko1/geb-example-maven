@@ -1,9 +1,9 @@
 import geb.spock.GebSpec
 
-class SimpleLoginSpec extends GebSpec {
+class RemoveSimpleLoginSpec extends GebSpec {
     def "should login with valid username and password"() {
         when:
-        go ".login.html"
+        go "login.html"
 
         then:
         $(".page-header").text() == "Login"

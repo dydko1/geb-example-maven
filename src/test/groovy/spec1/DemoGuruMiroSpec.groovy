@@ -1,26 +1,54 @@
 package spec1
 
 import geb.spock.GebReportingSpec
-import pages1.*
+import pages1.DemoGuruRegisterPage
 import spock.lang.Stepwise
 
 @Stepwise
-class O2MiroSpec extends GebReportingSpec {
+class DemoGuruMiroSpec extends GebReportingSpec {
 
-    def "Go to Main Page"()
-    {
-        given: "Go to o2"
-            to O2MiroPage
+    def "Go to Main Page"() {
+        given: "Go to demo.guru"
+        def page = to DemoGuruRegisterPage
+
         when:
-            login="dydko1@o2.pl"
-            password.value("mirdyd123")
-            btn.click()
-            println("aaa")
-            sleep(2000)
+        page.menue.register.click()
         then:
-            btn2.value("ffffff")
-            link1.click()
-            sleep(4000)
-            print("bbb")
+        page.firstName.value("Mirek")
+        page.lastName.value("Dyduch")
+        page.phone.value("502995535")
+        page.email.value("miro@wp.pl")
+
+        page.country.value "POLAND"
+        page.btn.click()
+        page.link1.click()
+        //dropdownSelectedText == "ANGOLA"
+        sleep(3000)
     }
 }
+
+/*
+        sleep(2000)
+        menue.flights.click()
+        sleep(2000)
+        menue.hotels.click()
+        sleep(2000)
+        menue.carRentals.click()
+        sleep(2000)
+        menue.cruises.click()
+        sleep(2000)
+        menue.destinations.click()
+        sleep(2000)
+        menue.vacations.click()
+        sleep(2000)
+
+        //sleep(1000)
+        menue.signON.click()
+        sleep(2000)
+        menue.register.click()
+        sleep(2000)
+        menue.support.click()
+        sleep(2000)
+        menue.contact.click()
+        sleep(2000)
+* */

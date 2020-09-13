@@ -3,13 +3,12 @@
 	
 	See: http://www.gebish.org/manual/current/configuration.html
 */
+
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
 import org.openqa.selenium.os.ExecutableFinder
 
-import static org.apache.commons.lang3.SystemUtils.IS_OS_LINUX
-import static org.apache.commons.lang3.SystemUtils.IS_OS_MAC
-import static org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS
+import static org.apache.commons.lang3.SystemUtils.*
 
 File findDriverExecutable() {
     def defaultExecutable = new ExecutableFinder().find("chromedriver")
@@ -32,9 +31,19 @@ File findDriverExecutable() {
 
 driver = {
     ChromeDriverService.Builder serviceBuilder = new ChromeDriverService.Builder()
-        .usingAnyFreePort()
-        .usingDriverExecutable(findDriverExecutable())
+            .usingAnyFreePort()
+            .usingDriverExecutable(findDriverExecutable())
     new ChromeDriver(serviceBuilder.build())
 }
 
-baseUrl = "http://gebish.org"
+baseUrl = "http://localhost:8080/"
+//baseUrl ="http://dydko1.cba.pl/test.html"
+//baseUrl = "http://demo.guru99.com/test/newtours/"
+//baseUrl = "http://demo.guru99.com/"
+//baseUrl = "https://poczta.o2.pl/zaloguj/"
+//baseUrl = "https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna"
+//baseUrl = "http://www.jdriven.com/"
+//baseURL="http://localhost:8080/geb-example-grails/"
+//baseUrl = "http://gebish.org"
+//baseUrl = "https://www.google.com"
+reportsDir = "build/reports/intellij-geb-reports"

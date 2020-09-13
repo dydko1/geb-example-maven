@@ -1,12 +1,12 @@
 package specs
 
 import geb.spock.GebSpec
-import pages.WeightPage
+import pages.WeightPage1
 
-class PlanetWeightSpec extends GebSpec {
+class PlanetWeightSpec1 extends GebSpec {
     def "weight on mercury"() {
         given: "the planet weight page"
-        to WeightPage
+        to WeightPage1
 
         when: "calculating a weight of 200"
         calculateWeight('200')

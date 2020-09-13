@@ -1,32 +1,64 @@
 package spec2
 
 import geb.spock.GebReportingSpec
-import pages1.DemoGuruRegisterPage
+import pages2.DemoGuruTestRadioCheckPage
+import pages2.DemoGuruTestRegisterPage
 import spock.lang.Stepwise
 
 @Stepwise
-class DemoGuruMiroButtonsSpec extends GebReportingSpec {
+class DemoGuruMiroTestsSpec extends GebReportingSpec {
 
     def "Go to Main Page"() {
         given: "Go to demo.guru"
-        def page = to DemoGuruRegisterPage
+        def page1 = to DemoGuruTestRegisterPage
 
         when:
-        page.menue.register.click()
-        then:
-        page.firstName.value("Mirek")
-        page.lastName.value("Dyduch")
-        page.phone.value("502995535")
-        page.email.value("miro@wp.pl")
+        page1.email = "miro@wp.pl"
+        page1.password = "tajne"
 
-        page.country.value("POLAND")
-        page.btn.click()
-        page.link1.click()
-        //dropdownSelectedText == "ANGOLA"
+        then:
+        page1.email == "miro@wp.pl"
+        page1.password == "tajne"
+        println("bbbb")
+
+        when:
+        page1.btn.click()
+        then:
+        println("fsdfdsa")
+    }
+
+    def "Go to RadioCheckBox"() {
+        given: "Go to demo.guru"
+        def page1 = to DemoGuruTestRadioCheckPage
+
+        when:
+        page1.radio1.click()
+        sleep(1000)
+        page1.radio2.click()
+        sleep(1000)
+        page1.radio3.click()
+
+        then:
+        println("bbbb")
+
+        when: "safdsa"
+        page1.checkBox1.click()
+        page1.checkBox2.click()
+        page1.checkBox3.click()
+
+        then: "dfsfd"
+        println("bbbb")
+
         sleep(5000)
     }
 }
 
+
+//page1.email2="mir1o@wp.pl"
+//page.firstName.value("Mirek")
+
+//dropdownSelectedText == "ANGOLA"
+//sleep(5000)
 /*
         sleep(2000)
         menue.flights.click()

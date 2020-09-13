@@ -1,3 +1,5 @@
+package pages
+
 import geb.Page
 import modules.ContactFormModule
 

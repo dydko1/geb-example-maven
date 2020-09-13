@@ -1,16 +1,16 @@
-package demo.browserautomation.pages.room
+package hotPage
 
-import demo.browserautomation.modules.Nav
+import hotModules.Nav
 import geb.Page
 import geb.module.TextInput
 
 class CreateRoomPage extends Page {
 
     static at = {
-        title == 'Create Room'
+        title == "Create Room"
     }
 
-    static url = '/room/create'
+    static url = "/room/create"
 
     static content = {
         inputField {
@@ -33,4 +33,5 @@ class CreateRoomPage extends Page {
     protected void populate(String inputFieldName, String value) {
         inputField(inputFieldName).text = value
     }
+
 }

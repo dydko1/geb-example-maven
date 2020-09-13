@@ -1,29 +1,33 @@
 package hotSpec
 
 import geb.spock.GebReportingSpec
-import hotPage.CreateRoomPage1
+import hotPage.CreateBookPage
 import spock.lang.Stepwise
 
+import java.time.LocalDate
+
 @Stepwise
-class HotelCreateRoom1Spec extends GebReportingSpec {
+class HotelCreateBookSpec extends GebReportingSpec {
 
     def "Go to Create Room"() {
         given: "Go to create Page"
-        def page = to CreateRoomPage1
+        def page = to CreateBookPage
 
         when:
-        page.name = 'Room 15'
-        page.save()
-
-        page.nav1.extras()
-        sleep(1000)
-        page.nav1.home()
-        sleep(1000)
-        page.nav1.rooms()
+        page.name = "Mirosław"
+        page.email = 'miro@wp.pl'
+        page.telephone = 502955535
+        page.arrival = LocalDate.of(2017, 12, 30)
+        page.departure = LocalDate.of(2050, 10, 11)
+        page.adults = 30
+        page.children = 15
+        //page.check('Room 103')
+        //page.check('new room')
+        //page.inputField('email').text = "xxix@wp.pl"
         println("aaaa")
 
         then:
         println("bbbb")
-        sleep(5000)
+        sleep(1500)
     }
 }

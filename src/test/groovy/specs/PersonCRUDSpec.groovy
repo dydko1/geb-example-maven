@@ -1,3 +1,5 @@
+package specs
+
 import geb.spock.GebReportingSpec
 
 import spock.lang.*
@@ -12,6 +14,7 @@ class PersonCRUDSpec extends GebReportingSpec {
 		to ListPage
 		then:
 		personRows.size() == 0
+		//sleep(2000)
 	}
 	
 	def "add a person"() {
@@ -66,7 +69,7 @@ class PersonCRUDSpec extends GebReportingSpec {
 		then:
 		at ShowPage
 	}
-	
+	/**/
 	def "delete user"() {
 		given:
 		def deletedId = id
