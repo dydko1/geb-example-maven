@@ -17,7 +17,6 @@ class CreateRoomPage22 extends Page {
 
     void setName(String name) {
         populate('name', name)
-
     }
 
     protected void populate(String inputFieldName, String value) {
