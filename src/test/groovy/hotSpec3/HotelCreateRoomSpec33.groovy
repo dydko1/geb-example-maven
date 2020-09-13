@@ -12,9 +12,10 @@ class HotelCreateRoomSpec33 extends GebSpec {
         given: "Go to main Page"
         def page = to CreateRoomPage33
         when: "Some text"
-        page.ame ("jozik")
+        page.name = "Miro"
+        page.save()
         then: "Finish"
-        println "xxxxxxxxxxxxxxxxxxxxxxx" + page.name
+        println "xxxxxxxxxxxxxxxxxxxxxxx"
 
         sleep(1500)
     }
