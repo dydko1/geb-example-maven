@@ -1,0 +1,4 @@
+package specs
+
+class PlanetWeightSpec {
+}

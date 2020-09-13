@@ -1,0 +1,4 @@
+package hotPage
+
+class CreateBookPage {
+}
